@@ -1,7 +1,12 @@
 {
     "folders": [
         {
-            "path": "."
+            "path": "D:/C++Projects/Travel Management System"
         }
-    ]
+    ],
+    "settings": {
+        "files.associations": {
+            "iostream": "cpp"
+        }
+    }
 }
