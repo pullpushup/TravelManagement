@@ -5,6 +5,24 @@
 
 using namespace std;
 
+void menu();
+class MangeMenu
+{
+    protected:
+    string userName; // admin name
+    
+    public:
+        MangeMenu()
+        {
+            system("color 0A");
+            cout << "\n\n\n\n\n\n\n\n\t Enter your Name to Continue as an Admin: ";
+            cin >> userName;
+            system("CLS");
+            menu(); 
+        }
+        
+};
+
 class Customers
 {
     public:
@@ -131,17 +149,17 @@ class Cabs
                {cout << "Invalid Input! Redirecting to Main menu \nPlease Wait!" <<endl;
                         Sleep(1100);
                         system("CLS");              
-                        //menu(); 
+                        menu(); 
                         }
                 cout<< "\nPress 1 to Redirect to Main Menu: ";
                 cin >> hireCab;
                 system("CLS");
                 if(hireCab == 1){
-                  //  menu()
+                  menu();
                 }
                 else
                 {
-                   // menu()
+                   menu();
                 }
             
         }
@@ -213,9 +231,9 @@ class Booking
                cout <<"\nPress 1 to redirect main menu: ";
                cin >> gotomenu;
                if(gotomenu ==1){
-                    //menu();
+                    menu();
                }else{
-               // menu();
+               menu();
                }
             }
                else if(pickHotel == 2)
@@ -261,9 +279,9 @@ class Booking
                cout <<"\nPress 1 to redirect main menu: ";
                cin >> gotomenu;
                if(gotomenu ==1){
-                    //menu();
+                    menu();
                }else{
-               // menu();
+               menu();
                }
             }
 
@@ -310,16 +328,16 @@ class Booking
                cout <<"\nPress 1 to redirect main menu: ";
                cin >> gotomenu;
                if(gotomenu ==1){
-                    //menu();
+                    menu();
                }else{
-               // menu();
+               menu();
                }
             }
             else{
                 cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" <<endl;
                 Sleep(1100);
                 system("CLS");
-                //menu();
+                menu();
             }
 
         }
@@ -378,6 +396,7 @@ void menu()
 {
         int mainChoice;
         int inChoice;
+        int gotoMenu;
 
         cout << "\t\t   *   Dwivedi Travls  *   \n" <<endl;
         cout << "---------------Main Menu---------------"  <<endl;
@@ -388,7 +407,7 @@ void menu()
          cout << "|\tCabs Management     ->2\t|"  <<endl;
          cout << "|\tBooking Management  ->3\t|"  <<endl;
          cout << "|\tCharges & Bill      ->4\t|"  <<endl;
-         cout << "|\tExit                ->4\t|"  <<endl;
+         cout << "|\tExit                ->5\t|"  <<endl;
          cout << "|\t\t\t\t\t"  <<endl;
          cout << "|_______________________________________|"  <<endl;
 
@@ -399,7 +418,7 @@ void menu()
 
          Customers a2;
          Cabs a3;
-         Booking s4;
+         Booking a4;
          Charges a5;
 
          if(mainChoice == 1)
@@ -422,11 +441,65 @@ void menu()
                 system("CLS");
                 menu();
             }
+
+            cout << "\nPress 1 to Redirect main menu: ";
+            cin >> gotoMenu;
+            system("CLS");
+            if(gotoMenu == 1){
+                menu();
+            }else{
+                menu();
+            }
+
+         }
+         else if(mainChoice == 2)
+         {
+            a3.cabDetails();
+         }else if(mainChoice == 3){
+                cout << "--> Book a Luxury Hotel using the system <--" << endl;
+                a4.hotels();
+         }else if(mainChoice == 4){
+              cout << "--> Get your receipt <--" << endl;
+                a5.printBill();
+
+                cout << "Your receipt is printed you can get ut from file path\n" << endl;
+                cout << "to display the your receipt in the screen, Enter 1: or Enter another key to back main menu: ";
+
+                cin >> gotoMenu;
+                if(gotoMenu ==1){
+                    system("CLS");
+                    a5.showBill();
+                    cout << "\nPress 1 to redirect main menu: ";
+                    cin >> gotoMenu;
+                    system("CLS");
+                    if(gotoMenu == 1){
+                        menu();
+                    }
+                    else{
+                        menu();
+                    }
+                }else{
+                    system("CLS");
+                    menu();
+                }
+
+         } 
+         else if(mainChoice == 5){
+            cout << "--GOOD-BYE--" <<endl;
+            Sleep(999);
+            system("CLS");
+            menu();
+         }
+         else{ cout << "Invalid Input! Redirecting to Previous Menu \nPlease wait!"<<endl;
+         Sleep(1100);
+         system("CLS");
+         menu();
+
          }
 }
 
 int main()
 {
-    cout << "Hello World" <<endl;
+    MangeMenu startObj;
     return 0;
 }

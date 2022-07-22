@@ -1,0 +1,21 @@
+
+Customer ID: 123
+Name: ayushman
+Age: 12
+Phone Number: 71534985
+Adress :hello
+Gender :street
+
+Customer ID: 1
+Name: Sam
+Age: 25
+Phone Number: 1234567890
+Adress :hello
+Gender :m
+
+Customer ID: 5
+Name: Kacper
+Age: 32
+Phone Number: 505106825
+Adress :hell
+Gender :town
