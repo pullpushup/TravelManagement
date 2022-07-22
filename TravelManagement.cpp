@@ -9,10 +9,11 @@ class Customers
 {
     public:
             string name, gender, address;
-            int age, phoneNo, cusID;
+            int age, phoneNo;
+            static int cusID;
             char all[999];
 
-            void detDetails()
+            void getDetails()
             {
                 ofstream out("old-customers.txt", ios::app);
                 {
@@ -54,11 +55,14 @@ class Customers
 
 };
 
+int Customers::cusID;
+
 class Cabs
 {
     public:
         int cabChoice, KM;
-        float cabcost, lastCabCost;
+        float cabcost; 
+        static float lastCabCost;
 
         void cabDetails()
         {
@@ -126,31 +130,33 @@ class Cabs
             } else
                {cout << "Invalid Input! Redirecting to Main menu \nPlease Wait!" <<endl;
                         Sleep(1100);
-                        system("CLS");
-                        menu(); 
+                        system("CLS");              
+                        //menu(); 
                         }
                 cout<< "\nPress 1 to Redirect to Main Menu: ";
                 cin >> hireCab;
                 system("CLS");
                 if(hireCab == 1){
-                    menu()
+                  //  menu()
                 }
                 else
                 {
-                    menu()
+                   // menu()
                 }
             
         }
 
 
 };
+float Cabs::lastCabCost;
 
 class Booking
 {
     public:
         int pickHotel;
         int packageHotel;
-        float hotelPrice;
+       static float hotelPrice;
+        int gotomenu;
 
         void hotels()
         {
@@ -178,16 +184,246 @@ class Booking
                 cout << "3. Luxury Pack" << endl; 
                 cout << "\t Live like a Luxury at: 1500 Euros" << endl; 
 
-                cout << "\nPress another key to back or\nEnter Package number "
-
+                cout << "\nPress another key to back or\nEnter Package number you want to book: ";
+                cin >> packageHotel;  
+                
+                if(pickHotel == 1){
+                    hotelPrice = 500.00;
+                     cout << "\nYou have successfully booked Standard Pack at Taj Mahal Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 2){
+                    hotelPrice = 1000.00;
+                     cout << "\nYou have successfully booked Premium Pack at Taj Mahal Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 3){
+                    hotelPrice = 1500.00;
+                     cout << "\nYou have successfully booked Luxury Pack at Taj Mahal Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else{
+                    cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                    Sleep(1100);
+                    system("CLS");
+                    hotels();
+                }
+                
+                
+               cout <<"\nPress 1 to redirect main menu: ";
+               cin >> gotomenu;
+               if(gotomenu ==1){
+                    //menu();
+               }else{
+               // menu();
+               }
             }
+               else if(pickHotel == 2)
+            {
+                cout << "--------------------------Hilton--------------------------\n" << endl;
+                cout << "The GarDen, SeaFacing, Food, BreakFast. Enjoy all you can drink and eat. Be our guest." << endl;
+
+                cout << "Packages offered by Hilton Hotel:\n" <<endl;
+
+                cout << "1. Standard Pack" << endl; 
+                cout << "\tAll basic facilities you need just for: 750 Euros" << endl; 
+                cout << "2. Premium Pack" << endl; 
+                cout << "\t EnjoyPremium: 1000 Euros" << endl; 
+                cout << "3. Luxury Pack" << endl; 
+                cout << "\t Live like a Luxury at: 2000 Euros" << endl; 
+
+                cout << "\nPress another key to back or\nEnter Package number you want to book: ";
+                cin >> packageHotel;  
+                
+                if(pickHotel == 1){
+                    hotelPrice = 750.00;
+                     cout << "\nYou have successfully booked Standard Pack at Hilton Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 2){
+                    hotelPrice = 1000.00;
+                     cout << "\nYou have successfully booked Premium Pack at Hilton Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 3){
+                    hotelPrice = 2000.00;
+                     cout << "\nYou have successfully booked Luxury Pack at Hilton Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else{
+                    cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                    Sleep(1100);
+                    system("CLS");
+                    hotels();
+                }
+                
+               
+               cout <<"\nPress 1 to redirect main menu: ";
+               cin >> gotomenu;
+               if(gotomenu ==1){
+                    //menu();
+               }else{
+               // menu();
+               }
+            }
+
+             else if(pickHotel == 3)
+            {
+                cout << "--------------------------Marriott--------------------------\n" << endl;
+                cout << "The GarDen, SeaFacing, Food, BreakFast. Enjoy all you can drink and eat. Be our guest." << endl;
+
+                cout << "Packages offered by Marriott Hotel:\n" <<endl;
+
+                cout << "1. Standard Pack" << endl; 
+                cout << "\tAll basic facilities you need just for: 450 Euros" << endl; 
+                cout << "2. Premium Pack" << endl; 
+                cout << "\t EnjoyPremium: 900 Euros" << endl; 
+                cout << "3. Luxury Pack" << endl; 
+                cout << "\t Live like a Luxury at: 1200 Euros" << endl; 
+
+                cout << "\nPress another key to back or\nEnter Package number you want to book: ";
+                cin >> packageHotel;  
+                
+                if(pickHotel == 1){
+                    hotelPrice = 450.00;
+                     cout << "\nYou have successfully booked Standard Pack at Marriott Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 2){
+                    hotelPrice = 900.00;
+                     cout << "\nYou have successfully booked Premium Pack at Marriott Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else if(pickHotel == 3){
+                    hotelPrice = 1200.00;
+                     cout << "\nYou have successfully booked Luxury Pack at Marriott Hotel" <<endl;
+                     cout << "Go back to main menu for Recepit" <<endl;
+                }
+                else{
+                    cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                    Sleep(1100);
+                    system("CLS");
+                    hotels();
+                }
+                
+                int gotomenu;
+               cout <<"\nPress 1 to redirect main menu: ";
+               cin >> gotomenu;
+               if(gotomenu ==1){
+                    //menu();
+               }else{
+               // menu();
+               }
+            }
+            else{
+                cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" <<endl;
+                Sleep(1100);
+                system("CLS");
+                //menu();
+            }
+
         }
 
 };
-class Charges
+    float Booking ::hotelPrice;
+    
+
+class Charges : public Booking, Cabs, Customers
 {
 
+    public:
+            void printBill()
+            {
+                ofstream outf("receipt.txt");
+                {
+                    outf << "----------Dwivedi Travel Agency----------" << endl;
+                    outf << "------------------Bill-------------------" << endl;
+                    outf << "-----------------------------------------" << endl;
+
+                    outf << "Customer ID: " <<Customers::cusID << endl << endl;
+                    outf << "Description\t\t Total" << endl;
+                    outf << "Hotel Cost:\t\t  " << fixed <<setprecision(2) <<Booking::hotelPrice << endl;
+                    outf << "Travel (cab) cost:\t\t  " << fixed <<setprecision(2) <<Cabs::lastCabCost << endl;
+
+                    outf << "-----------------------------------------" << endl;
+                    outf << "Total Charge:\t\t" << fixed <<setprecision(2) <<Booking::hotelPrice+Cabs::lastCabCost << endl;
+                    outf << "-----------------------------------------" << endl;
+                    outf << "-----------------Thank You---------------" << endl;
+
+                }
+                outf.close();
+            }
+
+            void showBill()
+            {
+                ifstream inf("receipt.txt");
+                {
+                    if(!inf)
+                    {
+                        cout << "File opening error!" << endl;
+                    }
+                    while (!(inf.eof()))
+                    {
+                        inf.getline(all,999);
+                        cout << all << endl;
+                    }
+                    
+                }
+                inf.close();
+            }
+
 };
+
+void menu()
+{
+        int mainChoice;
+        int inChoice;
+
+        cout << "\t\t   *   Dwivedi Travls  *   \n" <<endl;
+        cout << "---------------Main Menu---------------"  <<endl;
+
+         cout << "_______________________________________"  <<endl;
+         cout << "|\t\t\t\t\t"  <<endl;
+         cout << "|\tCustomer Management ->1\t|"  <<endl;
+         cout << "|\tCabs Management     ->2\t|"  <<endl;
+         cout << "|\tBooking Management  ->3\t|"  <<endl;
+         cout << "|\tCharges & Bill      ->4\t|"  <<endl;
+         cout << "|\tExit                ->4\t|"  <<endl;
+         cout << "|\t\t\t\t\t"  <<endl;
+         cout << "|_______________________________________|"  <<endl;
+
+         cout <<"\nEnter Your Choice: ";
+         cin >> mainChoice;
+
+         system("CLS");
+
+         Customers a2;
+         Cabs a3;
+         Booking s4;
+         Charges a5;
+
+         if(mainChoice == 1)
+         {
+            cout << "---------------Customers---------------\n" <<endl;
+            cout << "1. Enter New Customer" <<endl;
+            cout << "2. See Old Customer" <<endl;
+
+            cout << "\nEnter Choice: " <<endl;
+            cin >> inChoice;
+
+            system("CLS");
+            if(inChoice == 1){
+                a2.getDetails();
+            }else if(inChoice == 2){
+                a2.showDetails();
+            }else{
+                cout << "Invalid input! Redirecting to Previous Menu \nPlease wait!" <<endl;
+                Sleep(1100);
+                system("CLS");
+                menu();
+            }
+         }
+}
 
 int main()
 {
